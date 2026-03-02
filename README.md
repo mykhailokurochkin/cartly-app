@@ -1,5 +1,7 @@
 # 🛒 Cartly — Next-Gen Checkout Experience
 
+**🔗 [Live Demo](https://cartly-app-delta.vercel.app/)**
+
 Cartly is a high-performance checkout web application built with a focus on speed, type safety, and modern design. Developed using the latest **Next.js 15** (App Router) features to provide a seamless user experience.
 
 ---
