@@ -1,4 +1,4 @@
-import { Product } from "@/types";
+import { Product, productSchema } from "@/types";
 
 export async function fetchProduct(id: number): Promise<Product> {
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
@@ -9,5 +9,13 @@ export async function fetchProduct(id: number): Promise<Product> {
     throw new Error(`Failed to fetch product with id ${id}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  const result = productSchema.safeParse(data);
+
+  if (!result.success) {
+    console.error("API Validation Error:", result.error.format());
+    throw new Error("Received invalid data from product API");
+  }
+
+  return result.data;
 }

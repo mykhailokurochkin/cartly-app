@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
               src={product.thumbnail}
               alt={product.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-cover transition-transform duration-500"
               sizes="(max-width: 640px) 100vw, 40vw"
               priority
             />
@@ -45,8 +45,8 @@ export function ProductCard({ product }: ProductCardProps) {
                 <svg
                   key={i}
                   className={`h-4 w-4 ${i < Math.floor(product.rating)
-                      ? "text-yellow-400 fill-yellow-400"
-                      : "text-bg-tertiary fill-bg-tertiary"
+                    ? "text-yellow-400 fill-yellow-400"
+                    : "text-bg-tertiary fill-bg-tertiary"
                     }`}
                   viewBox="0 0 20 20"
                 >

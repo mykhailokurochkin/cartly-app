@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Cartly — Next-Gen Checkout Experience
 
-## Getting Started
+Cartly is a high-performance checkout web application built with a focus on speed, type safety, and modern design. Developed using the latest **Next.js 15** (App Router) features to provide a seamless user experience.
 
-First, run the development server:
+---
+
+## 🚀 Technical Highlights
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router) for hybrid rendering and fast navigation.
+- **Language**: [TypeScript](https://www.typescriptlang.org/) for end-to-end type safety.
+- **Styling**: [Tailwind CSS v3](https://tailwindcss.com/) with a custom design system and dark mode support.
+- **Validation**: [Zod](https://zod.dev/) for ironclad runtime API response validation.
+- **Data Fetching**: Server-side fetching with ISR (Incremental Static Regeneration) support for optimal performance.
+- **Error Handling**: Custom Next.js Error Boundaries and Loading Skeletons for robust UX.
+
+## 🛠 Features
+
+- **Product Details**: Fetched dynamically via `product_id` URL search parameters using the [DummyJSON API](https://dummyjson.com/).
+- **Promo System**: Real-time discount calculation with support for multiple codes (e.g., `SAVE10`, `CARTLY20`, `FREESHIP`).
+- **Dynamic Pricing**: Instant order summary updates for subtotal, item discounts, and promo-applied totals.
+- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+- **Safety First**: Runtime validation of API data ensures the app never crashes due to unexpected data changes.
+
+---
+
+## ⚙️ Development & Setup
+
+### 1. Prerequisites
+
+- **Node.js**: `^18.18.0 || ^20.9.0 || >=21.1.0` (Recommended: v20 LTS)
+- **npm**: `^9.x` or higher
+
+### 2. Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/mykhailokurochkin/cartly-app
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start development server
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) (redirects to default checkout) or [http://localhost:3000/checkout?product_id=1](http://localhost:3000/checkout?product_id=1).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗 Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+app/                 # App Router (Pages, Layouts, Error Boundaries)
+components/          # Reusable UI components (ProductCard, OrderSection, etc.)
+lib/                 # Core logic: API layer, Formatting, Promo validation
+types/               # TypeScript interfaces and Zod schemas
+public/              # Static assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
