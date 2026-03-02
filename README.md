@@ -18,7 +18,10 @@ Cartly is a high-performance checkout web application built with a focus on spee
 ## 🛠 Features
 
 - **Product Details**: Fetched dynamically via `product_id` URL search parameters using the [DummyJSON API](https://dummyjson.com/).
-- **Promo System**: Real-time discount calculation with support for multiple codes (e.g., `SAVE10`, `CARTLY20`, `FREESHIP`).
+- **Promo System**: Real-time discount calculation with support for multiple codes.
+  - `SAVE10`: 10% discount
+  - `CARTLY20`: 20% discount
+  - `FREESHIP`: 5% discount
 - **Dynamic Pricing**: Instant order summary updates for subtotal, item discounts, and promo-applied totals.
 - **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
 - **Safety First**: Runtime validation of API data ensures the app never crashes due to unexpected data changes.
